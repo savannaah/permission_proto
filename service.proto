@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package applicationproto;
+package permissionproto;
 
 message RequestHeader {
     string token = 1;
