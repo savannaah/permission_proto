@@ -1,2 +1,2 @@
 # permission_proto
-This repo contains protool buffer for permission service.
+This repo contains protocol buffer for permission service.
