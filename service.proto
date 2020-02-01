@@ -12,16 +12,15 @@ message ApplicationRequest {
     string name = 2;
 }
 
+message CreateRecordRequest {
+    RequestHeader header = 1;
+    string name = 2;
+}
+
 message DataRequest {
     RequestHeader header = 1;
     string name = 2;
     int32 id = 3;
-}
-
-message RelatedRecordRequest {
-    RequestHeader header = 1;
-    string name = 2;
-    string application = 3;
 }
 
 message DashboardRequest {
@@ -36,8 +35,7 @@ message PermissionResponse {
 
 service Permission {
     rpc CheckApplication(ApplicationRequest) returns (PermissionResponse);
-    rpc CheckCreateRecord(DataRequest) returns (PermissionResponse);
+    rpc CheckCreateRecord(CreateRecordRequest) returns (PermissionResponse);
     rpc CheckSpecificDataPermission(DataRequest) returns (PermissionResponse);
-    rpc CheckRelatedRecord(RelatedRecordRequest) returns (PermissionResponse);
     rpc CheckDashboardPermission(DashboardRequest) returns (PermissionResponse);
 }
